@@ -29,16 +29,18 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   text: {
-    color: '#25292e',
+    color: '#000',
   },
   header: {
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    paddingBottom: 10,
+    borderBottomWidth: 1,
   },
   headerBold: {
     fontSize: 24,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
 
   },
   headerLight: {
