@@ -34,7 +34,9 @@ const styles = StyleSheet.create({
   header: {
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    paddingBottom:10,
+    borderBottomWidth:1,
   },
   headerBold: {
     fontSize: 24,
