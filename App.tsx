@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Image } from 'expo-image';
 
@@ -12,9 +12,11 @@ const ReelsImage = require('./assets/images/rels.png');
 const ShoppingImage = require('./assets/images/shop.png');
 const UserImage = require('./assets/images/user.png');
 const DotImage = require('./assets/images/ellipsis.png');
-
-
-
+const UserPostImage = require('./assets/images/userpost.png');
+const HeartImage = require('./assets/images/heart.png');
+const CommentImage = require('./assets/images/comment.png');
+const MessageImage = require('./assets/images/message.png');
+const BookmarkImage = require('./assets/images/bookmark.png');
 
 export default function App() {
   return (
@@ -44,10 +46,43 @@ export default function App() {
          <Text style={styles.dotSize}>...</Text>
         </View>
       </View>
-      <View style={styles.container}>
-        <Image source={MainPageImage} style={styles.mainImage}/>
+      
+      <View style={styles.mainImageContainer}>
+        <Image source={UserPostImage} style={styles.mainImage}/>
       <StatusBar style="auto" />
       </View>
+
+      <View style={styles.actionBar}>
+        <TouchableOpacity>
+          <Image source={HeartImage} style={styles.actionImage}/>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Image source={CommentImage} style={styles.commentIcon}/>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Image source={MessageImage} style={styles.actionImage}/>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Image source={BookmarkImage} style={[styles.actionImage, styles.bookmarkRight]}/>
+        </TouchableOpacity>
+      </View>
+
+      <View style={styles.likedByContainer}>
+        <Image source={UserImage} style={styles.likedByIcons}/>
+        <Text style={styles.likedByText}>
+          Liked by <Text style={styles.bold}>Pranaynay_49</Text> and 
+          <Text style={styles.bold}> 7 others</Text>
+        </Text>
+      </View>
+
+      <View>
+        <Text style={styles.commentSection}><Text style={styles.bold}>frenchie_fry39</Text> Check out how cool I look! Yippee!!!</Text>
+        <Text style={styles.commentSection}>View all 1,000 comments</Text>
+        <Text style={styles.commentSection}>George_Bobski2 lalalalala</Text>
+        <Text style={styles.commentSection}>OtherCoolGuy Wow almost as cool as me!</Text>
+        <Text style={styles.viewDate}>5 days ago</Text>
+      </View>
+
       <View style={styles.imageBar}>
         <Image source={HomeImage} style={styles.image}/> 
         <Image source={SearchImage} style={styles.image}/> 
@@ -123,11 +158,61 @@ const styles = StyleSheet.create({
   },
   dotSize: {
     fontSize: 40,
-    marginLeft: '65%',
+    marginLeft: '58%',
+    //marginLeft: '65%',
+  },
+  mainImageContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   mainImage: {
-    height: 650,
-    width: 427,
-    borderBottomWidth: 1,
+    height: 360,
+    width: 360,
+    //borderBottomWidth: 1,
+    resizeMode: 'stretch',
+  },
+  //Action Bar includes the heart, comment, message, and bookmark icons
+  actionBar: {
+    flexDirection: 'row',
+    backgroundColor: 'transparent',
+    alignItems: 'center',
+  },
+  actionImage: {
+    height: 33,
+    width: 33,
+    marginLeft: 10,
+  },
+  commentIcon:{
+    height: 55,
+    width: 55,
+    marginLeft: 8,
+  },
+  bookmarkRight:{
+    marginLeft: 160,
+  },
+  likedByContainer: {
+    flexDirection: 'row',
+    backgroundColor: 'transparent',
+    alignItems: 'center',
+  
+  },
+  likedByIcons:{
+    height: 25,
+    width: 25,
+    marginLeft: 10,
+  },
+  likedByText:{
+    fontSize: 13,
+    marginLeft: 10,
+  },
+  commentSection: {
+    fontSize: 13,
+    marginTop: 3,
+    marginLeft: 10,
+  },
+  viewDate: {
+    fontSize: 10,
+    marginTop: 3,
+    marginLeft: 10,
   },
 });
