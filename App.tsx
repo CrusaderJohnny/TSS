@@ -18,7 +18,7 @@ const DotImage = require('./assets/images/ellipsis.png');
 
 export default function App() {
   return (
-    <SafeAreaView style={{flex:1}}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <Image source={PlaceholderImage} style={styles.image} />
         <View style={styles.headerText}>
@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    flexDirection: 'column',
   },
   text: {
     color: '#000',
@@ -70,10 +71,9 @@ const styles = StyleSheet.create({
   imageBar: {
     backgroundColor: '#fff',
     flexDirection: 'row',
-    marginBottom: 10,
-    paddingBottom: 10,
     justifyContent: 'space-between',
-    margin: 10,
+    marginTop: '30%',
+    margin: 15,
   },
   header: {
     backgroundColor: '#fff',
@@ -126,8 +126,53 @@ const styles = StyleSheet.create({
     marginLeft: '65%',
   },
   mainImage: {
-    height: 650,
-    width: 427,
-    borderBottomWidth: 1,
+    height: 360,
+    width: 360,
+    //borderBottomWidth: 1,
+    resizeMode: 'stretch',
+  },
+  //Action Bar includes the heart, comment, message, and bookmark icons
+  actionBar: {
+    flexDirection: 'row',
+    backgroundColor: 'transparent',
+    alignItems: 'center',
+  },
+  actionImage: {
+    height: 33,
+    width: 33,
+    marginLeft: 10,
+  },
+  commentIcon:{
+    height: 55,
+    width: 55,
+    marginLeft: 8,
+  },
+  bookmarkRight:{
+    marginLeft: 160,
+  },
+  likedByContainer: {
+    flexDirection: 'row',
+    backgroundColor: 'transparent',
+    alignItems: 'center',
+  
+  },
+  likedByIcons:{
+    height: 25,
+    width: 25,
+    marginLeft: 10,
+  },
+  likedByText:{
+    fontSize: 13,
+    marginLeft: 10,
+  },
+  commentSection: {
+    fontSize: 15,
+    marginTop: 3,
+    marginLeft: 10,
+  },
+  viewDate: {
+    fontSize: 10,
+    marginTop: 3,
+    marginLeft: 10,
   },
 });
