@@ -105,8 +105,7 @@ const styles = StyleSheet.create({
   imageBar: {
     backgroundColor: '#fff',
     flexDirection: 'row',
-    marginBottom: 10,
-    paddingBottom: 10,
+    marginTop: '28%',
     justifyContent: 'space-between',
     margin: 10,
   },
@@ -206,7 +205,7 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
   commentSection: {
-    fontSize: 13,
+    fontSize: 15,
     marginTop: 3,
     marginLeft: 10,
   },
